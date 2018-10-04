@@ -6,8 +6,8 @@ Ecrire une fonction filterOnPrice, qui attend 2 arguments:
   - price
 2. Un prix maximum
 
-La fonction doit renvoyer un tableau ne contenant que les produits ne dépassant pas le prix
-maximum.
+La fonction doit renvoyer un tableau ne contenant que les produits ne dépassant pas le 
+prix maximum.
 
 Exemple d'entrée:
 
@@ -29,6 +29,10 @@ Sortie attendue:
  */
 
 function filterOnPrice(products, maxPrice) {
+  return products.filter((product) => {
+    if(product.price <= maxPrice)
+      return product;
+  });
 }
 
 // Ne pas modifier l'export
