@@ -21,7 +21,10 @@ En sortie: [
 
  */
 
-function getStringsLength(strings) {
+const getStringsLength = (array) => {
+	return array.map((element) => {
+		return `${element} contains ${element.length} characters`
+	});
 }
 
 // Si besoin, tu peux toujours visualiser le résultat avec console.log,
