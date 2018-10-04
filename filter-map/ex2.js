@@ -9,15 +9,6 @@ En utilisant filter puis map, la fonction doit renvoyer les villes des campus qu
 un cursus JS/React.
 
 Tableau en entrée:
-[
-  { city: 'Bordeaux', curriculums: ['PHP/Symfony', 'JS/React'] },
-  { city: 'La Loupe', curriculums: ['JS/Angular'] },
-  { city: 'Lille', curriculums: ['PHP/Symfony', 'JS/React'] },
-  { city: 'Marseille', curriculums: ['JS/React'] },
-  { city: 'Orléans', curriculums: ['PHP/Symfony'] },
-  { city: 'Reims', curriculums: ['JS/React'] },
-  { city: 'Toulouse', curriculums: ['JEE/Android', 'JS/React'] }
-]
 
 Sortie attendue:
 ['Bordeaux', 'Lille', 'Marseille', 'Reims', 'Toulouse']
@@ -25,6 +16,10 @@ Sortie attendue:
 */
 
 function getCampusesTeachingReact(campuses) {
+	return campuses.filter((campus) => {
+		return campus.curriculums.includes('JS/React')
+	}).map(campus => {
+		return campus.city});
 }
 
 module.exports = getCampusesTeachingReact;
