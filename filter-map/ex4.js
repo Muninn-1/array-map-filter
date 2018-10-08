@@ -63,10 +63,36 @@ En prenant les deux exemples d'arguments d'entrée, on obtiendrait ceci en sorti
 
 */
 
-function getActivitiesMembers(activities, persons) {
+getActivitiesMembers = (activities, persons) => {
+  let solution = [];
+
+  activities.map((activity) => {
+    persons.filter((person) => {
+      if(person.activities.includes(activity)) {
+        solution.push(Object.defineProperty({}, 'activity', {
+              value : activity,
+                writable : true,
+                enumerable : true,
+                  configurable : true}))
+      }
+    });
+  });
 }
 
+const bob = ['Badminton', 'Tennis', 'Volley-ball', 'Base-ball', 'Soccer', 'Basket-ball', 'Cycling']
 
+const lenon = [
+  { name: 'Jay Fox', activities: [ 'Badminton' ] },
+  { name: 'Jenson Gardner', activities: [ 'Badminton', 'Tennis' ] },
+  { name: 'Max Dean', activities: [ 'Base-ball', 'Soccer' ] },
+  { name: 'Cody May', activities: [ 'Basket-ball', 'Base-ball' ] },
+  { name: 'Nicholas Knight', activities: [ 'Base-ball', 'Volley-ball' ] },
+  { name: 'Fletcher Estes', activities: [ 'Basket-ball' ] },
+  { name: 'Jaydon Gallagher', activities: [ 'Badminton', 'Basket-ball' ] },
+  { name: 'Efrain Rollins', activities: [ 'Volley-ball', 'Tennis' ] },
+  { name: 'Tripp Cash', activities: [ 'Badminton' ] },
+  { name: 'Ross Howard', activities: [ 'Cycling' ] }
+]
 
 // Ne pas modifier l'export
-module.exports = getActivitiesMembers;
+//module.exports = getActivitiesMembers;
